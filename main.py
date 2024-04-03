@@ -19,14 +19,12 @@ def calcular_y_mostrar_mcd():
     num1_str = entry_num1.get()
     num2_str = entry_num2.get()
 
-    if not num1_str.isdigit() or not num2_str.isdigit() or num1_str == "" or num2_str == "":
+    if not num1_str.isdigit() or not num2_str.isdigit():
         messagebox.showerror("Error", "Por favor, ingresa solo números enteros positivos.")
         limpiar_campos()
         return
 
-    num1 = int(num1_str)
-    num2 = int(num2_str)
-
+    num1, num2 = int(num1_str), int(num2_str)
     if num1 <= 0 or num2 <= 0:
         messagebox.showerror("Error", "Por favor, ingresa números enteros positivos.")
         limpiar_campos()
@@ -36,7 +34,7 @@ def calcular_y_mostrar_mcd():
     if resultado is None:
         messagebox.showinfo("Resultado", "El máximo común divisor de 0 no está definido.")
     else:
-        messagebox.showinfo("Resultado", "El máximo común divisor de {} y {} es: {}".format(num1, num2, resultado))
+        messagebox.showinfo("Resultado", f"El máximo común divisor de {num1} y {num2} es: {resultado}")
 
 
 # Crear la ventana
